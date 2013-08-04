@@ -1,0 +1,53 @@
+// CSS Layouts
+// --------------------------------
+
+@import "layouts.settings";
+
+// Interface definition
+// ----------------
+// aka Layouts
+
+// Grid container
+#{$l-container} {
+  /*
+    eg.
+      @include grid-row;
+    or
+      @include clearfix;
+  */
+}
+
+// Two colums layout: left/right sidebar + main content
+#{$l-twoColumns} {
+  // sidebar
+  & > #{$l-side} { /* eg. @include grid-column(3); */ }
+
+  // main content
+  & > #{$l-content} { /* eg. @include grid-column($grid-columns - 3); */ }
+}
+
+// Two colums layout: same width (50/50)
+#{$l-twoColumns--sameWidth} {
+  & > #{$l-content} { /* eg. @include grid-column($grid-columns / 2); */ }
+}
+
+// Three colums layout: left and right sidebar + main content
+#{$l-threeColumns} {
+  // sidebars
+  & > #{$l-side} { /* eg. @include grid-column(3); */ }
+
+  // main content
+  & > #{$l-content} { /* eg. @include grid-column($grid-columns - 6); */ }
+}
+
+// Three colums layout: same width (1/3)
+#{$l-threeColumns--sameWidth} {
+  & > li,
+  & > #{$l-content} { /* eg. @include grid-column($grid-columns / 3); */ }
+}
+
+// Four colums layout: same width (1/4)
+#{$l-fourColumns--sameWidth} {
+  & > li,
+  & > #{$l-content} { /* eg. @include grid-column($grid-columns / 4); */ }
+}

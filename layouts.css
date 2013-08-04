@@ -1,0 +1,65 @@
+                 /*
+  CSS Layouts
+  --------------------------------
+  A tiny SASS/LESS/CSS interface for a more semantic web.
+  It is meant to be an abstract layer on top of your grid system.
+
+  author: Giuseppe Gurgone
+  github: https:/*github.com/giuseppeg/CSS-Layouts
+
+  license: https:/*github.com/giuseppeg/CSS-Layouts/blob/master/LICENSE
+*/
+
+/*
+ Interface definition
+ ----------------
+ aka Layouts
+*/
+
+/* Grid container */
+.container {
+  /*
+    eg.
+      overflow: hidden;
+  */
+}
+
+.container > .side,
+.container > .content,
+.container > li {
+  /* eg. float: left; */
+}
+
+
+/* Two colums layout: left/right sidebar + main content */
+.side-content > .side {
+  /* eg. width: 25%; */
+}
+.side-content > .content {
+  /* eg. width: 75%; */
+}
+
+/* Two colums layout: same width (50/50) */
+.content-content > .content {
+  /* eg. width: 50%; */
+}
+
+/* Three colums layout: left and right sidebar + main content */
+.side-content-side > .side {
+  /* eg. width: 25%; */
+}
+.side-content-side > .content {
+  /* eg. width: 50%; */
+}
+
+/* Three colums layout: same width (1/3) */
+.box-list > li, .box-list > .content {
+  /* eg. width: 33.33333%; */
+}
+
+/* Four colums layout: same width (1/4) */
+.list > li, .list > .content {
+  /* eg. width: 25%; */
+}
+
+

@@ -1,0 +1,35 @@
+// CSS Layouts settings file
+// --------------------------------
+
+
+// settings
+// ----------------
+$l-prefix: "" !default;
+$l-class-prefix: "." + $l-prefix;
+
+
+// CSS selectors
+// ----------------
+
+// Grid container: row
+$l-container: $l-class-prefix + "container" !default;
+
+// Sidebar element
+$l-side: $l-class-prefix + "side" !default;
+// Content element
+$l-content: $l-class-prefix + "content" !default;
+
+// Two colums layout: left/right sidebar + main content
+$l-twoColumns: $l-class-prefix + "side-content" !default;
+
+// Two colums layout: same width (50/50)
+$l-twoColumns--sameWidth: $l-class-prefix + "content-content" !default;
+
+// Three colums layout: left and right sidebar + main content
+$l-threeColumns: $l-class-prefix + "side-content-side" !default;
+
+// Three colums layout: same width (1/3)
+$l-threeColumns--sameWidth: $l-class-prefix + "box-list" !default;
+
+// Four colums layout: same width (1/4)
+$l-fourColumns--sameWidth: $l-class-prefix + "list" !default;

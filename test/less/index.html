@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CSS Layouts Test</title>
+        <meta name="description" content="CSS layouts is a tiny SASS/CSS interface. It is meant to be an abstraction layer on top of your grid system">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet/less" type="text/css" href="layouts.less">
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.4.1/less.min.js"></script>
+    </head>
+    <body>
+        <h2 id="side-content">Two colums layout: left sidebar + main content</h2>
+        <div class="container side-content">
+          <div class="side">side</div>
+          <div class="content">content</div>
+        </div>
+
+        <h2 id="content-side">Two colums layout: right sidebar + main content</h2>
+        <div class="container side-content">
+          <div class="content">content</div>
+          <div class="side">side</div>
+        </div>
+
+        <h2 id="content-content">Two colums layout: same width (50/50)</h2>
+        <div class="container content-content">
+          <div class="content">content</div>
+          <div class="content">content</div>
+        </div>
+
+        <h2 id="side-content-side">Three colums layout: left and right sidebar + main content</h2>
+        <div class="container side-content-side">
+          <div class="side">side</div>
+          <div class="content">content</div>
+          <div class="side">side</div>
+        </div>
+
+        <h2 id="box-list">Three colums layout: same width (1/3)</h2>
+        <ul class="container box-list">
+          <li>list item</li>
+          <li>list item</li>
+          <li>list item</li>
+        </ul>
+
+        <h2 id="list">Four colums layout: same width (1/4)</h2>
+        <ul class="container list">
+          <li>list item</li>
+          <li>list item</li>
+          <li>list item</li>
+          <li>list item</li>
+        </ul>
+
+        <h2 id="nesting">Nesting</h2>
+        <div class="container content-content">
+          <div class="content">
+            <h3>Hey</h3>
+            <ul class="container box-list">
+              <li>list item</li>
+              <li>list item</li>
+              <li>list item</li>
+            </ul>
+          </div>
+          <div class="content">
+            <h3>Ya</h3>
+            <div class="container side-content">
+              <div class="side">side</div>
+              <div class="content">content</div>
+            </div>
+          </div>
+        </div>
+
+    </body>
+</html>

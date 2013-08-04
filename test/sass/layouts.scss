@@ -1,0 +1,99 @@
+//  CSS Layouts
+//  --------------------------------
+// An abstraction layer for your grid system.
+//  A tiny SASS/CSS interface for a more semantic web.
+//  An abstraction layer on top of your grid system.
+//
+//  author: Giuseppe Gurgone
+//  github: https:/*github.com/giuseppeg/CSS-Layouts
+//
+//  license: https:/*github.com/giuseppeg/CSS-Layouts/blob/master/LICENSE
+
+@import "grid";
+@import "../../sass/layouts.settings";
+
+/*
+  CSS Layouts test
+  ----------------
+*/
+
+// Grid container
+#{$l-container} {
+  @include grid-row;
+}
+
+// Two colums layout: left/right sidebar + main content
+#{$l-twoColumns} {
+  // sidebar
+  & > #{$l-side} { width: grid-column-size(3); }
+
+  // main content
+  & > #{$l-content} { width: grid-column-size($grid-columns - 3); }
+}
+
+// Two colums layout: same width (50/50)
+#{$l-twoColumns--sameWidth} {
+  & > #{$l-content} { width: grid-column-size($grid-columns / 2); }
+}
+
+// Three colums layout: left and right sidebar + main content
+#{$l-threeColumns} {
+  // sidebars
+  & > #{$l-side} { width: grid-column-size(3); }
+
+  // main content
+  & > #{$l-content} { width: grid-column-size($grid-columns - 6); }
+}
+
+// Three colums layout: same width (1/3)
+#{$l-threeColumns--sameWidth} {
+  & > li,
+  & > #{$l-content} { width: grid-column-size($grid-columns / 3); }
+}
+
+// Four colums layout: same width (1/4)
+#{$l-fourColumns--sameWidth} {
+  & > li,
+  & > #{$l-content} { width: grid-column-size($grid-columns / 4); }
+}
+
+#{$l-side},
+#{$l-content},
+#{$l-threeColumns--sameWidth} > li,
+#{$l-fourColumns--sameWidth} > li {
+  @include grid-column;
+}
+
+/*
+  Theme
+  ----------------
+*/
+
+body {
+  margin: 20px;
+  font-family: sans-serif;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+  padding-left: 0;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+#{$l-container} + #{$l-container} { margin-top: 40px; }
+
+#{$l-side},
+#{$l-content},
+#{$l-threeColumns--sameWidth} > li,
+#{$l-fourColumns--sameWidth} > li {
+  padding: 20px;
+  box-sizing: border-box;
+
+  border: 1px solid #ddd;
+  background-color: #eee;
+}

@@ -1,0 +1,90 @@
+/*
+  CSS Layouts test
+  ----------------
+*/
+.container {
+  /* borrowed from purecss.io grids */
+  letter-spacing: -0.31em;
+  /* Webkit: collapse white-space between units */
+  *letter-spacing: normal;
+  /* reset IE < 8 */
+  *word-spacing: -0.43em;
+  /* IE < 8: collapse white-space between units */
+  text-rendering: optimizespeed;
+  /* Webkit: fixes text-rendering: optimizeLegibility */
+}
+
+.side-content > .side {
+  width: 25%;
+}
+.side-content > .content {
+  width: 75%;
+}
+
+.content-content > .content {
+  width: 50%;
+}
+
+.side-content-side > .side {
+  width: 25%;
+}
+.side-content-side > .content {
+  width: 50%;
+}
+
+.box-list > li, .box-list > .content {
+  width: 33.33333%;
+}
+
+.list > li, .list > .content {
+  width: 25%;
+}
+
+.side,
+.content,
+.box-list > li,
+.list > li {
+  /* borrowed from purecss.io grids */
+  display: inline-block;
+  *display: inline;
+  /* IE < 8: fake inline-block */
+  zoom: 1;
+  letter-spacing: normal;
+  word-spacing: normal;
+  vertical-align: top;
+  text-rendering: auto;
+}
+
+/*
+  Theme
+  ----------------
+*/
+body {
+  margin: 20px;
+  font-family: sans-serif;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+  padding-left: 0;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.container + .container {
+  margin-top: 40px;
+}
+
+.side,
+.content,
+.box-list > li,
+.list > li {
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  background-color: #eee;
+}

@@ -1,0 +1,33 @@
+// test grid system
+
+$grid-columns: 12 !default;
+
+@function grid-column-size($span: 1) {
+  @return (100% / $grid-columns) * $span;
+}
+
+@mixin grid-row($grid-row-width: 100%, $grid-row-center: false) {
+  @if $grid-row-width != 100% {
+    width: $grid-row-width;
+    @if $grid-row-center {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  /* borrowed from purecss.io grids */
+  letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
+  *letter-spacing: normal; /* reset IE < 8 */
+  *word-spacing: -0.43em; /* IE < 8: collapse white-space between units */
+  text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
+}
+
+@mixin grid-column() {
+  /* borrowed from purecss.io grids */
+  display: inline-block;
+  *display: inline; /* IE < 8: fake inline-block */
+  zoom: 1;
+  letter-spacing: normal;
+  word-spacing: normal;
+  vertical-align: top;
+  text-rendering: auto;
+}
